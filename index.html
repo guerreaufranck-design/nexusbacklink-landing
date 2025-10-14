@@ -28,7 +28,6 @@
             line-height: 1.6;
         }
 
-        /* Parallax Background */
         .parallax-bg {
             position: fixed;
             top: 0;
@@ -60,7 +59,6 @@
             50% { opacity: 1; }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -138,7 +136,6 @@
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -215,7 +212,6 @@
             color: white;
         }
 
-        /* Stats Section */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -253,7 +249,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Section Container */
         .section {
             max-width: 1400px;
             margin: 8rem auto;
@@ -277,7 +272,6 @@
             margin-right: auto;
         }
 
-        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -335,7 +329,6 @@
             z-index: 1;
         }
 
-        /* Pricing Section */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -433,7 +426,6 @@
             box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
         }
 
-        /* Comparison Table */
         .comparison-table {
             background: rgba(30, 41, 59, 0.5);
             border-radius: 20px;
@@ -469,7 +461,6 @@
             font-size: 1.5rem;
         }
 
-        /* Footer */
         footer {
             margin-top: 8rem;
             padding: 4rem 5%;
@@ -500,7 +491,6 @@
             color: var(--primary);
         }
 
-        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -514,7 +504,6 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -539,111 +528,105 @@
     </style>
 </head>
 <body>
-    <!-- Parallax Background -->
     <div class="parallax-bg">
         <div class="stars" id="stars"></div>
     </div>
 
-    <!-- Navigation -->
     <nav id="nav">
         <div class="nav-content">
             <div class="logo">
                 <img src="https://i.ibb.co/9ZK8Qhm/nexusbacklink-logo.png" alt="NexusBacklink Logo" class="logo-img">
             </div>
             <ul class="nav-links">
-                <li><a href="#features">Fonctionnalités</a></li>
-                <li><a href="#pricing">Tarifs</a></li>
-                <li><a href="#comparison">Comparaison</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#comparison">Comparison</a></li>
             </ul>
-            <button class="cta-nav" onclick="window.location.href='#pricing'">Commencer</button>
+            <button class="cta-nav" onclick="window.location.href='#pricing'">Get Started</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content fade-in">
             <h1>
-                L'IA qui <span class="gradient-text">Domine</span><br>
-                les Backlinks
+                The AI That <span class="gradient-text">Dominates</span><br>
+                Backlinks
             </h1>
             <p>
-                Fini les pitches robotiques. Notre IA multi-agents génère des backlinks DR50+ 
-                avec un taux de conversion 3x supérieur à la concurrence.
+                No more robotic pitches. Our multi-agent AI generates DR35+ backlinks 
+                with a 3x higher conversion rate than the competition.
             </p>
             <div class="cta-group">
-                <a href="#pricing" class="cta-primary">Démarrer Gratuitement</a>
-                <a href="#features" class="cta-secondary">Découvrir l'IA</a>
+                <a href="#pricing" class="cta-primary">Start Free Trial</a>
+                <a href="#features" class="cta-secondary">Discover the AI</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-            <div class="stats fade-in">
+    <div class="stats fade-in">
         <div class="stat-card">
             <div class="stat-number">729%</div>
-            <div class="stat-label">ROI Moyen</div>
+            <div class="stat-label">Average ROI</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">DR35+</div>
-            <div class="stat-label">Backlinks Premium</div>
+            <div class="stat-label">Premium Backlinks</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">12</div>
-            <div class="stat-label">Mois de Validité</div>
+            <div class="stat-label">Months Validity</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">3x</div>
-            <div class="stat-label">Meilleur que Backlinker.AI</div>
+            <div class="stat-label">Better than Backlinker.AI</div>
         </div>
     </div>
 
-    <!-- Features Section -->
     <section class="section" id="features">
-        <h2 class="section-title">Pourquoi <span class="gradient-text">NexusBacklink</span> ?</h2>
+        <h2 class="section-title">Why <span class="gradient-text">NexusBacklink</span>?</h2>
         <p class="section-subtitle">
-            Une architecture IA révolutionnaire qui transforme chaque opportunité en backlink garanti
+            A revolutionary AI architecture that transforms every opportunity into a guaranteed backlink
         </p>
 
         <div class="features-grid">
             <div class="feature-card fade-in">
                 <div class="feature-icon">🧠</div>
-                <h3>IA Multi-Agents</h3>
-                <p>4 agents spécialisés travaillent ensemble : Researcher, Matcher, Writer et Optimizer pour des résultats 10x supérieurs.</p>
+                <h3>Multi-Agent AI</h3>
+                <p>4 specialized agents working together: Researcher, Matcher, Writer and Optimizer for 10x superior results.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">🎯</div>
-                <h3>Scoring Prédictif</h3>
-                <p>Probabilité de succès calculée pour chaque opportunité avec analyse comportementale des journalistes.</p>
+                <h3>Predictive Scoring</h3>
+                <p>Success probability calculated for each opportunity with behavioral analysis of journalists.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">🌍</div>
-                <h3>Multi-Langue</h3>
-                <p>Support natif FR, EN, DE, ES, IT, PT. Accès aux médias locaux ignorés par vos concurrents.</p>
+                <h3>Multi-Language</h3>
+                <p>Native support for EN, FR, DE, ES, IT, PT. Access to local media ignored by your competitors.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">✍️</div>
                 <h3>Content Generation</h3>
-                <p>Articles complets rédigés automatiquement si le journaliste accepte. Plus besoin d'écrire.</p>
+                <p>Complete articles automatically written if the journalist accepts. No more writing needed.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">🤖</div>
                 <h3>Voice Clone</h3>
-                <p>L'IA reproduit votre style d'écriture personnel. Pitches 100% authentiques, 0% détection bot.</p>
+                <p>AI reproduces your personal writing style. 100% authentic pitches, 0% bot detection.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">📊</div>
-                <h3>Analytics IA</h3>
-                <p>Prédictions de backlinks, impact SEO estimé, recommandations automatiques en temps réel.</p>
+                <h3>AI Analytics</h3>
+                <p>Backlink predictions, estimated SEO impact, automatic recommendations in real-time.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section class="section" id="pricing">
         <h2 class="section-title">Simple, Transparent Pricing</h2>
         <p class="section-subtitle">
@@ -656,12 +639,12 @@
                 <div class="pricing-price">$210</div>
                 <div class="pricing-period">3 Premium Credits</div>
                 <ul class="pricing-features">
-                    <li>3 crédits premium</li>
-                    <li>3 backlinks DR35+ garantis</li>
-                    <li>Matching IA intelligent</li>
-                    <li>Dashboard analytics</li>
-                    <li>Support email</li>
-                    <li>Valide 12 mois</li>
+                    <li>3 premium credits</li>
+                    <li>3 DR35+ guaranteed backlinks</li>
+                    <li>Intelligent AI matching</li>
+                    <li>Analytics dashboard</li>
+                    <li>Email support</li>
+                    <li>Valid for 12 months</li>
                 </ul>
                 <button class="pricing-cta">Get Started</button>
             </div>
@@ -672,13 +655,13 @@
                 <div class="pricing-price">$325</div>
                 <div class="pricing-period">5 Premium Credits</div>
                 <ul class="pricing-features">
-                    <li>5 crédits premium</li>
-                    <li>5 backlinks DR35+ garantis</li>
+                    <li>5 premium credits</li>
+                    <li>5 DR35+ guaranteed backlinks</li>
                     <li>Voice Clone style matching</li>
-                    <li>Scoring prédictif avancé</li>
-                    <li>Analytics détaillés</li>
-                    <li>Support prioritaire</li>
-                    <li>Valide 12 mois</li>
+                    <li>Advanced predictive scoring</li>
+                    <li>Detailed analytics</li>
+                    <li>Priority support</li>
+                    <li>Valid for 12 months</li>
                 </ul>
                 <button class="pricing-cta">Get Started</button>
             </div>
@@ -688,13 +671,13 @@
                 <div class="pricing-price">$600</div>
                 <div class="pricing-period">10 Premium Credits</div>
                 <ul class="pricing-features">
-                    <li>10 crédits premium</li>
-                    <li>10 backlinks DR35+ garantis</li>
-                    <li>Voice Clone premium</li>
-                    <li>Content Generation complète</li>
-                    <li>Analytics IA prédictifs</li>
-                    <li>Support VIP</li>
-                    <li>Valide 12 mois</li>
+                    <li>10 premium credits</li>
+                    <li>10 DR35+ guaranteed backlinks</li>
+                    <li>Premium Voice Clone</li>
+                    <li>Complete Content Generation</li>
+                    <li>Predictive AI analytics</li>
+                    <li>VIP support</li>
+                    <li>Valid for 12 months</li>
                 </ul>
                 <button class="pricing-cta">Get Started</button>
             </div>
@@ -705,48 +688,47 @@
                 <div class="pricing-price">$1100</div>
                 <div class="pricing-period">20 Premium Credits</div>
                 <ul class="pricing-features">
-                    <li>20 crédits premium</li>
-                    <li>20 backlinks DR35+ garantis</li>
+                    <li>20 premium credits</li>
+                    <li>20 DR35+ guaranteed backlinks</li>
                     <li>Partnership network access</li>
                     <li>API access included</li>
-                    <li>Analytics IA premium</li>
-                    <li>Support dédié 24/7</li>
-                    <li>Valide 18 mois (BONUS 6 mois)</li>
+                    <li>Premium AI analytics</li>
+                    <li>Dedicated 24/7 support</li>
+                    <li>Valid for 18 months (BONUS 6 months)</li>
                 </ul>
                 <button class="pricing-cta">Get Started</button>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
     <section class="section" id="comparison">
         <h2 class="section-title">NexusBacklink vs <span class="gradient-text">Backlinker.AI</span></h2>
         <p class="section-subtitle">
-            Comparez et voyez pourquoi nous sommes le choix évident
+            Compare and see why we're the obvious choice
         </p>
 
         <div class="comparison-table fade-in">
             <table>
                 <thead>
                     <tr>
-                        <th>Fonctionnalité</th>
+                        <th>Feature</th>
                         <th>Backlinker.AI</th>
                         <th style="color: var(--accent);">NexusBacklink</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Prix d'entrée</td>
-                        <td>$300/mois</td>
+                        <td>Entry price</td>
+                        <td>$300/month</td>
                         <td><strong>$210 (3 credits)</strong></td>
                     </tr>
                     <tr>
-                        <td>Backlinks garantis</td>
+                        <td>Guaranteed backlinks</td>
                         <td>3 DR30+</td>
                         <td><strong>3-20 DR35+</strong></td>
                     </tr>
                     <tr>
-                        <td>IA Multi-Agents</td>
+                        <td>Multi-Agent AI</td>
                         <td><span class="cross">✗</span></td>
                         <td><span class="check">✓</span></td>
                     </tr>
@@ -761,50 +743,48 @@
                         <td><span class="check">✓</span></td>
                     </tr>
                     <tr>
-                        <td>Support Multi-Langue</td>
-                        <td><span class="cross">✗</span> EN uniquement</td>
-                        <td><span class="check">✓</span> 6 langues</td>
+                        <td>Multi-Language Support</td>
+                        <td><span class="cross">✗</span> EN only</td>
+                        <td><span class="check">✓</span> 6 languages</td>
                     </tr>
                     <tr>
-                        <td>Analytics Prédictifs</td>
+                        <td>Predictive Analytics</td>
                         <td><span class="cross">✗</span></td>
                         <td><span class="check">✓</span></td>
                     </tr>
                     <tr>
                         <td>API Access</td>
                         <td><span class="cross">✗</span></td>
-                        <td><span class="check">✓</span> Plan Domination</td>
+                        <td><span class="check">✓</span> Domination plan</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- Final CTA -->
     <section class="section" style="text-align: center;">
-        <h2 class="section-title fade-in">Prêt à <span class="gradient-text">Dominer</span> ?</h2>
+        <h2 class="section-title fade-in">Ready to <span class="gradient-text">Dominate</span>?</h2>
         <p class="section-subtitle fade-in">
-            Rejoignez les leaders qui utilisent l'IA la plus avancée pour leurs backlinks
+            Join the leaders using the most advanced AI for their backlinks
         </p>
         <div class="cta-group fade-in">
-            <a href="#pricing" class="cta-primary">Commencer Maintenant</a>
-            <a href="#features" class="cta-secondary">En savoir plus</a>
+            <a href="#pricing" class="cta-primary">Start Now</a>
+            <a href="#features" class="cta-secondary">Learn More</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div style="margin-bottom: 2rem;">
             <img src="https://i.ibb.co/9ZK8Qhm/nexusbacklink-logo.png" alt="NexusBacklink" style="height: 60px; opacity: 0.8;">
         </div>
-        <p>© 2025 NexusBacklink. L'avenir des backlinks est ici.</p>
+        <p>© 2025 NexusBacklink. The future of backlinks is here.</p>
         <div class="footer-links">
-            <a href="#">À propos</a>
+            <a href="#">About</a>
             <a href="#">Blog</a>
             <a href="#">Documentation</a>
             <a href="#">Support</a>
-            <a href="#">Conditions</a>
-            <a href="#">Confidentialité</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
         </div>
         <p style="font-size: 0.9rem; margin-top: 2rem;">
             nexusbacklink.com | nexusbacklink.app
@@ -812,7 +792,6 @@
     </footer>
 
     <script>
-        // Generate stars for parallax background
         const starsContainer = document.getElementById('stars');
         for (let i = 0; i < 200; i++) {
             const star = document.createElement('div');
@@ -823,7 +802,6 @@
             starsContainer.appendChild(star);
         }
 
-        // Navbar scroll effect
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -833,14 +811,12 @@
             }
         });
 
-        // Parallax effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const stars = document.querySelector('.stars');
             stars.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
 
-        // Fade in on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -858,7 +834,6 @@
             observer.observe(el);
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
