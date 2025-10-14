@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusBacklink - The AI That Dominates Backlinks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f1f5f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Parallax Background */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        nav.scrolled .logo-img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-nav {
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .cta-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Container */
+        .section {
+            max-width: 1400px;
+            margin: 8rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            padding: 3rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pricing-plan {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-period {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 4rem;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        th {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .check {
+            color: #10b981;
+            font-size: 1.5rem;
+        }
+
+        .cross {
+            color: #ef4444;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 8rem;
+            padding: 4rem 5%;
+            background: rgba(15, 23, 42, 0.8);
+            text-align: center;
+        }
+
+        footer p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.6s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 6rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .section {
+                margin: 4rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg">
+        <div class="stars" id="stars"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="https://i.ibb.co/9ZK8Qhm/nexusbacklink-logo.png" alt="NexusBacklink Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#pricing">Tarifs</a></li>
+                <li><a href="#comparison">Comparaison</a></li>
+            </ul>
+            <button class="cta-nav" onclick="window.location.href='#pricing'">Commencer</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>
+                L'IA qui <span class="gradient-text">Domine</span><br>
+                les Backlinks
+            </h1>
+            <p>
+                Fini les pitches robotiques. Notre IA multi-agents génère des backlinks DR50+ 
+                avec un taux de conversion 3x supérieur à la concurrence.
+            </p>
+            <div class="cta-group">
+                <a href="#pricing" class="cta-primary">Démarrer Gratuitement</a>
+                <a href="#features" class="cta-secondary">Découvrir l'IA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+            <div class="stats fade-in">
+        <div class="stat-card">
+            <div class="stat-number">729%</div>
+            <div class="stat-label">ROI Moyen</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">DR35+</div>
+            <div class="stat-label">Backlinks Premium</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Mois de Validité</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3x</div>
+            <div class="stat-label">Meilleur que Backlinker.AI</div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <h2 class="section-title">Pourquoi <span class="gradient-text">NexusBacklink</span> ?</h2>
+        <p class="section-subtitle">
+            Une architecture IA révolutionnaire qui transforme chaque opportunité en backlink garanti
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🧠</div>
+                <h3>IA Multi-Agents</h3>
+                <p>4 agents spécialisés travaillent ensemble : Researcher, Matcher, Writer et Optimizer pour des résultats 10x supérieurs.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎯</div>
+                <h3>Scoring Prédictif</h3>
+                <p>Probabilité de succès calculée pour chaque opportunité avec analyse comportementale des journalistes.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🌍</div>
+                <h3>Multi-Langue</h3>
+                <p>Support natif FR, EN, DE, ES, IT, PT. Accès aux médias locaux ignorés par vos concurrents.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">✍️</div>
+                <h3>Content Generation</h3>
+                <p>Articles complets rédigés automatiquement si le journaliste accepte. Plus besoin d'écrire.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🤖</div>
+                <h3>Voice Clone</h3>
+                <p>L'IA reproduit votre style d'écriture personnel. Pitches 100% authentiques, 0% détection bot.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📊</div>
+                <h3>Analytics IA</h3>
+                <p>Prédictions de backlinks, impact SEO estimé, recommandations automatiques en temps réel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">
+            Choose the perfect credit pack for your backlink needs. All packs include DR35+ guaranteed backlinks.
+        </p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card fade-in">
+                <h3 class="pricing-plan">Starter</h3>
+                <div class="pricing-price">$210</div>
+                <div class="pricing-period">3 Premium Credits</div>
+                <ul class="pricing-features">
+                    <li>3 crédits premium</li>
+                    <li>3 backlinks DR35+ garantis</li>
+                    <li>Matching IA intelligent</li>
+                    <li>Dashboard analytics</li>
+                    <li>Support email</li>
+                    <li>Valide 12 mois</li>
+                </ul>
+                <button class="pricing-cta">Get Started</button>
+            </div>
+
+            <div class="pricing-card featured fade-in">
+                <div class="pricing-badge">BEST VALUE</div>
+                <h3 class="pricing-plan">Growth</h3>
+                <div class="pricing-price">$325</div>
+                <div class="pricing-period">5 Premium Credits</div>
+                <ul class="pricing-features">
+                    <li>5 crédits premium</li>
+                    <li>5 backlinks DR35+ garantis</li>
+                    <li>Voice Clone style matching</li>
+                    <li>Scoring prédictif avancé</li>
+                    <li>Analytics détaillés</li>
+                    <li>Support prioritaire</li>
+                    <li>Valide 12 mois</li>
+                </ul>
+                <button class="pricing-cta">Get Started</button>
+            </div>
+
+            <div class="pricing-card fade-in">
+                <h3 class="pricing-plan">Boost</h3>
+                <div class="pricing-price">$600</div>
+                <div class="pricing-period">10 Premium Credits</div>
+                <ul class="pricing-features">
+                    <li>10 crédits premium</li>
+                    <li>10 backlinks DR35+ garantis</li>
+                    <li>Voice Clone premium</li>
+                    <li>Content Generation complète</li>
+                    <li>Analytics IA prédictifs</li>
+                    <li>Support VIP</li>
+                    <li>Valide 12 mois</li>
+                </ul>
+                <button class="pricing-cta">Get Started</button>
+            </div>
+
+            <div class="pricing-card fade-in">
+                <div class="pricing-badge">EXTENDED</div>
+                <h3 class="pricing-plan">Domination</h3>
+                <div class="pricing-price">$1100</div>
+                <div class="pricing-period">20 Premium Credits</div>
+                <ul class="pricing-features">
+                    <li>20 crédits premium</li>
+                    <li>20 backlinks DR35+ garantis</li>
+                    <li>Partnership network access</li>
+                    <li>API access included</li>
+                    <li>Analytics IA premium</li>
+                    <li>Support dédié 24/7</li>
+                    <li>Valide 18 mois (BONUS 6 mois)</li>
+                </ul>
+                <button class="pricing-cta">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section" id="comparison">
+        <h2 class="section-title">NexusBacklink vs <span class="gradient-text">Backlinker.AI</span></h2>
+        <p class="section-subtitle">
+            Comparez et voyez pourquoi nous sommes le choix évident
+        </p>
+
+        <div class="comparison-table fade-in">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fonctionnalité</th>
+                        <th>Backlinker.AI</th>
+                        <th style="color: var(--accent);">NexusBacklink</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prix d'entrée</td>
+                        <td>$300/mois</td>
+                        <td><strong>$210 (3 credits)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Backlinks garantis</td>
+                        <td>3 DR30+</td>
+                        <td><strong>3-20 DR35+</strong></td>
+                    </tr>
+                    <tr>
+                        <td>IA Multi-Agents</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Voice Clone</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Content Generation</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Support Multi-Langue</td>
+                        <td><span class="cross">✗</span> EN uniquement</td>
+                        <td><span class="check">✓</span> 6 langues</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics Prédictifs</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>API Access</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span> Plan Domination</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="text-align: center;">
+        <h2 class="section-title fade-in">Prêt à <span class="gradient-text">Dominer</span> ?</h2>
+        <p class="section-subtitle fade-in">
+            Rejoignez les leaders qui utilisent l'IA la plus avancée pour leurs backlinks
+        </p>
+        <div class="cta-group fade-in">
+            <a href="#pricing" class="cta-primary">Commencer Maintenant</a>
+            <a href="#features" class="cta-secondary">En savoir plus</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 2rem;">
+            <img src="https://i.ibb.co/9ZK8Qhm/nexusbacklink-logo.png" alt="NexusBacklink" style="height: 60px; opacity: 0.8;">
+        </div>
+        <p>© 2025 NexusBacklink. L'avenir des backlinks est ici.</p>
+        <div class="footer-links">
+            <a href="#">À propos</a>
+            <a href="#">Blog</a>
+            <a href="#">Documentation</a>
+            <a href="#">Support</a>
+            <a href="#">Conditions</a>
+            <a href="#">Confidentialité</a>
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 2rem;">
+            nexusbacklink.com | nexusbacklink.app
+        </p>
+    </footer>
+
+    <script>
+        // Generate stars for parallax background
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Navbar scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const stars = document.querySelector('.stars');
+            stars.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
