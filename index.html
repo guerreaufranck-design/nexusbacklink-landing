@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NexusBacklink - The AI-powered platform that dominates backlinks with intelligent multi-stage processing and guaranteed DR35+ results.">
-    <meta name="keywords" content="backlinks, SEO, AI, link building, HARO, digital marketing">
-    <title>NexusBacklink - The AI That Dominates Backlinks</title>
+    <meta name="description" content="NexusBacklink - Get DR35+ backlinks with AI that writes like you. Track every backlink, verify DR automatically, and grow your SEO effortlessly.">
+    <meta name="keywords" content="backlinks, SEO, AI, link building, HARO, digital marketing, PR">
+    <title>NexusBacklink - Get DR35+ Backlinks That Actually Work</title>
     <style>
         * {
             margin: 0;
@@ -20,6 +20,7 @@
             --dark: #0f172a;
             --darker: #020617;
             --light: #f1f5f9;
+            --success: #10b981;
         }
 
         body {
@@ -30,6 +31,7 @@
             line-height: 1.6;
         }
 
+        /* Parallax Background */
         .parallax-bg {
             position: fixed;
             top: 0;
@@ -61,6 +63,7 @@
             50% { opacity: 1; }
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -138,6 +141,7 @@
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -214,6 +218,7 @@
             color: white;
         }
 
+        /* Stats Section */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -251,6 +256,7 @@
             margin-top: 0.5rem;
         }
 
+        /* Sections */
         .section {
             max-width: 1400px;
             margin: 8rem auto;
@@ -274,9 +280,10 @@
             margin-right: auto;
         }
 
+        /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
             margin-top: 4rem;
         }
@@ -331,6 +338,20 @@
             z-index: 1;
         }
 
+        .feature-benefit {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50px;
+            color: var(--success);
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Pricing Section */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -387,27 +408,57 @@
 
         .pricing-period {
             color: #94a3b8;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-tagline {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
         .pricing-features {
             list-style: none;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .pricing-features li {
             padding: 0.75rem 0;
-            color: #94a3b8;
+            color: #cbd5e1;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.75rem;
+            font-size: 0.95rem;
         }
 
         .pricing-features li::before {
             content: '✓';
-            color: var(--primary);
+            color: var(--success);
             font-weight: 900;
             font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-result {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-result strong {
+            color: var(--primary);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-result div {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .pricing-cta {
@@ -428,6 +479,7 @@
             box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
         }
 
+        /* Comparison Table */
         .comparison-table {
             background: rgba(30, 41, 59, 0.5);
             border-radius: 20px;
@@ -454,7 +506,7 @@
         }
 
         .check {
-            color: #10b981;
+            color: var(--success);
             font-size: 1.5rem;
         }
 
@@ -463,6 +515,7 @@
             font-size: 1.5rem;
         }
 
+        /* Footer */
         footer {
             margin-top: 8rem;
             padding: 4rem 5%;
@@ -493,6 +546,7 @@
             color: var(--primary);
         }
 
+        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -506,6 +560,7 @@
             }
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -525,6 +580,10 @@
 
             .section {
                 margin: 4rem auto;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -548,166 +607,254 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content fade-in">
             <h1>
-                The AI That <span class="gradient-text">Dominates</span><br>
-                Backlinks
+                Get <span class="gradient-text">DR35+ Backlinks</span><br>
+                That Actually Work
             </h1>
             <p>
-                No more robotic pitches. Our intelligent AI pipeline generates DR35+ backlinks 
-                with a 3x higher conversion rate than the competition.
+                Stop wasting time on robotic pitches. Our AI writes like you, 
+                finds the best opportunities, and tracks every backlink automatically. 
+                See real SEO results in weeks, not months.
             </p>
             <div class="cta-group">
-                <a href="#pricing" class="cta-primary">Start Free Trial</a>
-                <a href="#features" class="cta-secondary">Discover How It Works</a>
+                <a href="#pricing" class="cta-primary">Start Getting Backlinks</a>
+                <a href="#features" class="cta-secondary">See How It Works</a>
             </div>
         </div>
     </section>
 
+    <!-- STATS SECTION -->
     <div class="stats fade-in">
         <div class="stat-card">
-            <div class="stat-number">729%</div>
-            <div class="stat-label">Average ROI</div>
+            <div class="stat-number">50%</div>
+            <div class="stat-label">Higher Acceptance Rate</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">DR35+</div>
-            <div class="stat-label">Premium Backlinks</div>
+            <div class="stat-label">Verified Backlinks</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">12</div>
-            <div class="stat-label">Months Validity</div>
+            <div class="stat-number">116</div>
+            <div class="stat-label">Opportunities/Day</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">3x</div>
-            <div class="stat-label">Better than Backlinker.AI</div>
+            <div class="stat-number">Auto</div>
+            <div class="stat-label">Backlink Tracking</div>
         </div>
     </div>
 
+    <!-- FEATURES SECTION -->
     <section class="section" id="features">
-        <h2 class="section-title">Why <span class="gradient-text">NexusBacklink</span>?</h2>
+        <h2 class="section-title">Stop Guessing. <span class="gradient-text">Start Winning</span></h2>
         <p class="section-subtitle">
-            An intelligent 4-stage pipeline that transforms every opportunity into a guaranteed backlink
+            Every feature is designed to get you more backlinks with less effort
         </p>
 
         <div class="features-grid">
             <div class="feature-card fade-in">
-                <div class="feature-icon">🧠</div>
-                <h3>Intelligent AI Pipeline</h3>
-                <p>Sophisticated 4-stage process: Research → Match → Write → Optimize. Each stage specializes in maximizing pitch success rate for 10x superior results.</p>
-            </div>
-
-            <div class="feature-card fade-in">
                 <div class="feature-icon">🎯</div>
-                <h3>Predictive Scoring</h3>
-                <p>Success probability calculated for each opportunity with behavioral analysis of journalists and intelligent matching algorithms.</p>
-            </div>
-
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🌍</div>
-                <h3>Multi-Language</h3>
-                <p>Native support for EN, FR, DE, ES, IT, PT. Access to local media ignored by your competitors.</p>
+                <h3>AI Finds Your Best Matches</h3>
+                <p>
+                    No more scrolling through irrelevant opportunities. Our AI analyzes 116+ 
+                    opportunities daily from HARO and Featured, then shows you only the ones 
+                    that match your expertise with 85%+ accuracy.
+                </p>
+                <span class="feature-benefit">Save 3+ hours/week</span>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">✍️</div>
-                <h3>Content Generation</h3>
-                <p>Complete articles automatically written if the journalist accepts. No more writing needed.</p>
-            </div>
-
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🤖</div>
-                <h3>Voice Matching</h3>
-                <p>AI adapts to your personal writing style. 100% authentic pitches that sound like you wrote them, 0% bot detection.</p>
+                <h3>Pitches That Sound Like YOU</h3>
+                <p>
+                    Generic pitches get ignored. Our AI learns your writing style and creates 
+                    pitches that journalists can't tell apart from your own writing. 
+                    Zero bot detection, 50% higher response rates.
+                </p>
+                <span class="feature-benefit">50% more acceptances</span>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">📊</div>
-                <h3>AI Analytics</h3>
-                <p>Backlink predictions, estimated SEO impact, automatic recommendations in real-time.</p>
+                <h3>Know Your Success Probability</h3>
+                <p>
+                    Stop sending blind pitches. See your exact success probability (e.g., "75% chance") 
+                    before you hit send. Focus on opportunities that actually convert.
+                </p>
+                <span class="feature-benefit">3x better conversion</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔍</div>
+                <h3>Automatic Backlink Verification</h3>
+                <p>
+                    No more manual checking. When your pitch gets accepted and published, 
+                    we automatically verify your backlink exists, check if it's follow/nofollow, 
+                    and confirm the Domain Rating.
+                </p>
+                <span class="feature-benefit">100% transparency</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📈</div>
+                <h3>Track Every Stage</h3>
+                <p>
+                    See exactly where each pitch is: Opportunity → Generated → Sent → Accepted. 
+                    Get notified when journalists respond. Never lose track of your backlink pipeline.
+                </p>
+                <span class="feature-benefit">Full visibility</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Writes Full Articles</h3>
+                <p>
+                    Journalist accepted your pitch? We automatically generate a complete 
+                    800-1200 word article with optimized quotes and citations. 
+                    Just review and send.
+                </p>
+                <span class="feature-benefit">Boost plan & up</span>
             </div>
         </div>
     </section>
 
+    <!-- PRICING SECTION -->
     <section class="section" id="pricing">
-        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <h2 class="section-title">Choose Your Growth Plan</h2>
         <p class="section-subtitle">
-            Choose the perfect credit pack for your backlink needs. All packs include DR35+ guaranteed backlinks.
+            All plans include automatic backlink verification and DR checking. 
+            Start with any plan, upgrade anytime.
         </p>
 
         <div class="pricing-grid">
+            <!-- STARTER -->
             <div class="pricing-card fade-in">
                 <h3 class="pricing-plan">Starter</h3>
                 <div class="pricing-price">$210</div>
                 <div class="pricing-period">3 Premium Credits</div>
+                <p class="pricing-tagline">Perfect for solopreneurs testing PR outreach</p>
+                
                 <ul class="pricing-features">
-                    <li>3 premium credits</li>
-                    <li>3 DR35+ guaranteed backlinks</li>
-                    <li>Intelligent AI matching</li>
-                    <li>4-stage pipeline</li>
-                    <li>Analytics dashboard</li>
+                    <li>3 high-quality backlink opportunities</li>
+                    <li>AI finds your best matches (85%+ score)</li>
+                    <li>Professional pitches that get responses</li>
+                    <li>Track every stage of your pipeline</li>
+                    <li>Real-time backlink verification</li>
+                    <li>Automatic DR checking</li>
                     <li>Email support</li>
                     <li>Valid for 12 months</li>
                 </ul>
-                <button class="pricing-cta">Get Started</button>
+                
+                <div class="pricing-result">
+                    <strong>📈 Expected Result:</strong>
+                    <div>
+                        • 1-2 DR35+ backlinks/month<br>
+                        • ~$2,000 value in backlinks<br>
+                        • ROI: 952% on average
+                    </div>
+                </div>
+                
+                <button class="pricing-cta" onclick="window.location.href='https://nexusbacklink-v2.vercel.app'">Get Started</button>
             </div>
 
+            <!-- GROWTH -->
             <div class="pricing-card featured fade-in">
                 <div class="pricing-badge">BEST VALUE</div>
                 <h3 class="pricing-plan">Growth</h3>
                 <div class="pricing-price">$325</div>
                 <div class="pricing-period">5 Premium Credits</div>
+                <p class="pricing-tagline">For professionals serious about PR & SEO</p>
+                
                 <ul class="pricing-features">
-                    <li>5 premium credits</li>
-                    <li>5 DR35+ guaranteed backlinks</li>
-                    <li>Voice style matching</li>
-                    <li>Advanced predictive scoring</li>
-                    <li>Detailed analytics</li>
-                    <li>Priority support</li>
+                    <li>5 opportunities matched to your expertise</li>
+                    <li>Pitches in YOUR unique voice (not a robot)</li>
+                    <li>Success probability shown before sending</li>
+                    <li>Automatic backlink tracking & DR check</li>
+                    <li>Detailed analytics & actionable insights</li>
+                    <li>Priority support (24h response)</li>
                     <li>Valid for 12 months</li>
                 </ul>
-                <button class="pricing-cta">Get Started</button>
+                
+                <div class="pricing-result">
+                    <strong>🚀 Expected Result:</strong>
+                    <div>
+                        • 2-3 DR40+ backlinks/month<br>
+                        • ~$5,000 value in backlinks<br>
+                        • ROI: 1,538% on average
+                    </div>
+                </div>
+                
+                <button class="pricing-cta" onclick="window.location.href='https://nexusbacklink-v2.vercel.app'">Get Started</button>
             </div>
 
+            <!-- BOOST -->
             <div class="pricing-card fade-in">
                 <h3 class="pricing-plan">Boost</h3>
                 <div class="pricing-price">$600</div>
                 <div class="pricing-period">10 Premium Credits</div>
+                <p class="pricing-tagline">For companies scaling their content strategy</p>
+                
                 <ul class="pricing-features">
-                    <li>10 premium credits</li>
-                    <li>10 DR35+ guaranteed backlinks</li>
-                    <li>Premium voice matching</li>
-                    <li>Complete content generation</li>
-                    <li>Predictive AI analytics</li>
-                    <li>VIP support</li>
+                    <li>10 premium opportunities (best first)</li>
+                    <li>Everything in Growth</li>
+                    <li>Complete article drafts if accepted</li>
+                    <li>3-month success rate predictions</li>
+                    <li>Backlink impact forecasting</li>
+                    <li>VIP support (priority queue)</li>
                     <li>Valid for 12 months</li>
                 </ul>
-                <button class="pricing-cta">Get Started</button>
+                
+                <div class="pricing-result">
+                    <strong>💎 Expected Result:</strong>
+                    <div>
+                        • 5-7 DR40+ backlinks/month<br>
+                        • ~$10,000 value in backlinks<br>
+                        • ROI: 1,667% on average
+                    </div>
+                </div>
+                
+                <button class="pricing-cta" onclick="window.location.href='https://nexusbacklink-v2.vercel.app'">Get Started</button>
             </div>
 
+            <!-- DOMINATION -->
             <div class="pricing-card fade-in">
                 <div class="pricing-badge">EXTENDED</div>
                 <h3 class="pricing-plan">Domination</h3>
                 <div class="pricing-price">$1100</div>
                 <div class="pricing-period">20 Premium Credits</div>
+                <p class="pricing-tagline">For enterprises dominating their niche</p>
+                
                 <ul class="pricing-features">
-                    <li>20 premium credits</li>
-                    <li>20 DR35+ guaranteed backlinks</li>
-                    <li>Partnership network access</li>
-                    <li>API access included</li>
-                    <li>Premium AI analytics</li>
-                    <li>Dedicated 24/7 support</li>
-                    <li>Valid for 18 months (BONUS 6 months)</li>
+                    <li>20 opportunities + exclusive network</li>
+                    <li>Everything in Boost</li>
+                    <li>Guaranteed placements via partner sites</li>
+                    <li>Full API access for automation</li>
+                    <li>A/B testing of pitch variants</li>
+                    <li>Dedicated account manager (24/7)</li>
+                    <li>Valid for 18 months (+6 FREE)</li>
                 </ul>
-                <button class="pricing-cta">Get Started</button>
+                
+                <div class="pricing-result">
+                    <strong>👑 Guaranteed Result:</strong>
+                    <div>
+                        • 10-15 DR50+ backlinks/month<br>
+                        • ~$25,000 value in backlinks<br>
+                        • ROI: 2,273% on average
+                    </div>
+                </div>
+                
+                <button class="pricing-cta" onclick="window.location.href='https://nexusbacklink-v2.vercel.app'">Get Started</button>
             </div>
         </div>
     </section>
 
+    <!-- COMPARISON SECTION -->
     <section class="section" id="comparison">
-        <h2 class="section-title">NexusBacklink vs <span class="gradient-text">Backlinker.AI</span></h2>
+        <h2 class="section-title">Why Choose <span class="gradient-text">NexusBacklink</span>?</h2>
         <p class="section-subtitle">
-            Compare and see why we're the obvious choice
+            See how we compare to Backlinker.AI (the closest competitor)
         </p>
 
         <div class="comparison-table fade-in">
@@ -721,42 +868,52 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Entry price</td>
-                        <td>$300/month</td>
-                        <td><strong>$210 (3 credits)</strong></td>
+                        <td><strong>Entry Price</strong></td>
+                        <td>$300/month (recurring)</td>
+                        <td><strong>$210 for 12 months</strong> ✨</td>
                     </tr>
                     <tr>
-                        <td>Guaranteed backlinks</td>
-                        <td>3 DR30+</td>
-                        <td><strong>3-20 DR35+</strong></td>
+                        <td><strong>Guaranteed Backlinks</strong></td>
+                        <td>3 DR30+ (lower quality)</td>
+                        <td><strong>3-20 DR35+ (verified)</strong></td>
                     </tr>
                     <tr>
-                        <td>Intelligent AI Pipeline</td>
+                        <td><strong>Backlink Verification</strong></td>
+                        <td><span class="cross">✗</span> Manual checking</td>
+                        <td><span class="check">✓</span> Automatic + DR check</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pitch Quality</strong></td>
+                        <td>Generic templates</td>
+                        <td><strong>Sounds like YOU</strong> (voice matching)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Success Probability</strong></td>
                         <td><span class="cross">✗</span></td>
-                        <td><span class="check">✓</span> 4-stage process</td>
+                        <td><span class="check">✓</span> Know before sending</td>
                     </tr>
                     <tr>
-                        <td>Voice Style Matching</td>
+                        <td><strong>Content Generation</strong></td>
                         <td><span class="cross">✗</span></td>
-                        <td><span class="check">✓</span> Adaptive writing</td>
+                        <td><span class="check">✓</span> Full article drafts</td>
                     </tr>
                     <tr>
-                        <td>Content Generation</td>
-                        <td><span class="cross">✗</span></td>
-                        <td><span class="check">✓</span> Full articles</td>
-                    </tr>
-                    <tr>
-                        <td>Multi-Language Support</td>
+                        <td><strong>Multi-Language</strong></td>
                         <td><span class="cross">✗</span> EN only</td>
                         <td><span class="check">✓</span> 6 languages</td>
                     </tr>
                     <tr>
-                        <td>Predictive Analytics</td>
-                        <td><span class="cross">✗</span></td>
-                        <td><span class="check">✓</span> AI-powered insights</td>
+                        <td><strong>Pipeline Tracking</strong></td>
+                        <td>Basic list</td>
+                        <td><strong>4-stage visual pipeline</strong></td>
                     </tr>
                     <tr>
-                        <td>API Access</td>
+                        <td><strong>Analytics</strong></td>
+                        <td>Basic metrics</td>
+                        <td><strong>Predictive AI insights</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>API Access</strong></td>
                         <td><span class="cross">✗</span></td>
                         <td><span class="check">✓</span> Domination plan</td>
                     </tr>
@@ -765,22 +922,24 @@
         </div>
     </section>
 
+    <!-- CTA SECTION -->
     <section class="section" style="text-align: center;">
-        <h2 class="section-title fade-in">Ready to <span class="gradient-text">Dominate</span>?</h2>
+        <h2 class="section-title fade-in">Ready to <span class="gradient-text">10x Your Backlinks</span>?</h2>
         <p class="section-subtitle fade-in">
-            Join the leaders using the most advanced AI for their backlinks
+            Join companies using AI to dominate their SEO. Get your first DR35+ backlink within 30 days or we'll add bonus credits.
         </p>
         <div class="cta-group fade-in">
-            <a href="#pricing" class="cta-primary">Start Now</a>
-            <a href="#features" class="cta-secondary">Learn More</a>
+            <a href="https://nexusbacklink-v2.vercel.app" class="cta-primary">Start Now - $210</a>
+            <a href="#features" class="cta-secondary">See All Features</a>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div style="margin-bottom: 2rem;">
             <img src="./assets/logo.png" alt="NexusBacklink" style="height: 60px; opacity: 0.8;">
         </div>
-        <p>© 2025 NexusBacklink. The future of backlinks is here.</p>
+        <p>© 2025 NexusBacklink. AI-powered backlinks that actually work.</p>
         <div class="footer-links">
             <a href="#">About</a>
             <a href="#">Blog</a>
@@ -789,12 +948,14 @@
             <a href="#">Terms</a>
             <a href="#">Privacy</a>
         </div>
-        <p style="font-size: 0.9rem; margin-top: 2rem;">
+        <p style="font-size: 0.9rem; margin-top: 2rem; color: #64748b;">
             nexusbacklink.com | nexusbacklink.app
         </p>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
+        // Stars animation
         const starsContainer = document.getElementById('stars');
         for (let i = 0; i < 200; i++) {
             const star = document.createElement('div');
@@ -805,6 +966,7 @@
             starsContainer.appendChild(star);
         }
 
+        // Navbar scroll effect
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -814,12 +976,14 @@
             }
         });
 
+        // Parallax effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const stars = document.querySelector('.stars');
             stars.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
 
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -837,6 +1001,7 @@
             observer.observe(el);
         });
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
