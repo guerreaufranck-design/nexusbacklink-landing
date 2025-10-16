@@ -1,76 +1,1008 @@
-<!-- COMPARISON SECTION -->
-<section class="section" id="comparison">
-    <h2 class="section-title">Why Choose <span class="gradient-text">NexusBacklink</span>?</h2>
-    <p class="section-subtitle">
-        See how we compare to Backlinker.AI (the closest competitor)
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NexusBacklink - Get DR35+ backlinks with AI that writes like you. Track every backlink, verify DR automatically, and grow your SEO effortlessly.">
+    <meta name="keywords" content="backlinks, SEO, AI, link building, HARO, digital marketing, PR">
+    <title>NexusBacklink - Get DR35+ Backlinks That Actually Work</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <div class="comparison-table fade-in">
-        <table>
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Backlinker.AI</th>
-                    <th style="color: var(--accent);">NexusBacklink</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Entry Price</strong></td>
-                    <td>$300/month</td>
-                    <td><strong>$199/month</strong> (34% cheaper) ✨</td>
-                </tr>
-                <tr>
-                    <td><strong>Pitches Per Month</strong></td>
-                    <td>150 max (capped)</td>
-                    <td><strong>Unlimited</strong> ✨</td>
-                </tr>
-                <tr>
-                    <td><strong>Guaranteed Backlinks</strong></td>
-                    <td>3 DR30+ (lower quality)</td>
-                    <td><strong>3-15 DR35-50+</strong> (verified)</td>
-                </tr>
-                <tr>
-                    <td><strong>Backlink Verification</strong></td>
-                    <td><span class="cross">✗</span> Manual checking</td>
-                    <td><span class="check">✓</span> Automatic + DR check</td>
-                </tr>
-                <tr>
-                    <td><strong>Pitch Quality</strong></td>
-                    <td>Generic GPT templates</td>
-                    <td><strong>Voice Clone</strong> (sounds like YOU)</td>
-                </tr>
-                <tr>
-                    <td><strong>Success Probability</strong></td>
-                    <td><span class="cross">✗</span></td>
-                    <td><span class="check">✓</span> Know before sending</td>
-                </tr>
-                <tr>
-                    <td><strong>Content Generation</strong></td>
-                    <td><span class="cross">✗</span></td>
-                    <td><span class="check">✓</span> Full article drafts (Growth+)</td>
-                </tr>
-                <tr>
-                    <td><strong>Multi-Language</strong></td>
-                    <td><span class="cross">✗</span> EN only</td>
-                    <td><span class="check">✓</span> 6 languages</td>
-                </tr>
-                <tr>
-                    <td><strong>Pipeline Tracking</strong></td>
-                    <td>Basic list</td>
-                    <td><strong>Visual pipeline</strong> (4 stages)</td>
-                </tr>
-                <tr>
-                    <td><strong>Analytics</strong></td>
-                    <td>Basic metrics</td>
-                    <td><strong>Predictive AI insights</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>API Access</strong></td>
-                    <td><span class="cross">✗</span></td>
-                    <td><span class="check">✓</span> Boost plan</td>
-                </tr>
-            </tbody>
-        </table>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f1f5f9;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Parallax Background */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        nav.scrolled .logo-img {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-nav {
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .cta-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1400px;
+            margin: 8rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-benefit {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50px;
+            color: var(--success);
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            padding: 3rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pricing-plan {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-period {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .pricing-tagline {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: #cbd5e1;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 900;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-result {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-result strong {
+            color: var(--primary);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-result div {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 4rem;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        th {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .check {
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+
+        .cross {
+            color: #ef4444;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 8rem;
+            padding: 4rem 5%;
+            background: rgba(15, 23, 42, 0.8);
+            text-align: center;
+        }
+
+        footer p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.6s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 6rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .section {
+                margin: 4rem auto;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax-bg">
+        <div class="stars" id="stars"></div>
     </div>
-</section>
+
+    <nav id="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="NexusBacklink Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#comparison">Comparison</a></li>
+            </ul>
+            <button class="cta-nav" onclick="window.location.href='https://nexusbacklink-v2.vercel.app/pricing'">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>
+                Get <span class="gradient-text">DR35+ Backlinks</span><br>
+                That Actually Work
+            </h1>
+            <p>
+                Stop wasting time on robotic pitches. Our AI writes like you, 
+                finds the best opportunities, and tracks every backlink automatically. 
+                See real SEO results in weeks, not months.
+            </p>
+            <div class="cta-group">
+                <a href="https://nexusbacklink-v2.vercel.app/pricing" class="cta-primary">Start Getting Backlinks</a>
+                <a href="#features" class="cta-secondary">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <div class="stats fade-in">
+        <div class="stat-card">
+            <div class="stat-number">50%</div>
+            <div class="stat-label">Higher Acceptance Rate</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">DR35+</div>
+            <div class="stat-label">Verified Backlinks</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">116</div>
+            <div class="stat-label">Opportunities/Day</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Unlimited Pitches</div>
+        </div>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <section class="section" id="features">
+        <h2 class="section-title">Stop Guessing. <span class="gradient-text">Start Winning</span></h2>
+        <p class="section-subtitle">
+            Every feature is designed to get you more backlinks with less effort
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎯</div>
+                <h3>AI Finds Your Best Matches</h3>
+                <p>
+                    No more scrolling through irrelevant opportunities. Our AI analyzes 116+ 
+                    opportunities daily from HARO and Featured, then shows you only the ones 
+                    that match your expertise with 85%+ accuracy.
+                </p>
+                <span class="feature-benefit">Save 3+ hours/week</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">✍️</div>
+                <h3>Pitches That Sound Like YOU</h3>
+                <p>
+                    Generic pitches get ignored. Our AI learns your writing style and creates 
+                    pitches that journalists can't tell apart from your own writing. 
+                    Zero bot detection, 50% higher response rates.
+                </p>
+                <span class="feature-benefit">50% more acceptances</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📊</div>
+                <h3>Know Your Success Probability</h3>
+                <p>
+                    Stop sending blind pitches. See your exact success probability (e.g., "75% chance") 
+                    before you hit send. Focus on opportunities that actually convert.
+                </p>
+                <span class="feature-benefit">3x better conversion</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔍</div>
+                <h3>Automatic Backlink Verification</h3>
+                <p>
+                    No more manual checking. When your pitch gets accepted and published, 
+                    we automatically verify your backlink exists, check if it's follow/nofollow, 
+                    and confirm the Domain Rating.
+                </p>
+                <span class="feature-benefit">100% transparency</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📈</div>
+                <h3>Track Every Stage</h3>
+                <p>
+                    See exactly where each pitch is: Opportunity → Generated → Sent → Accepted. 
+                    Get notified when journalists respond. Never lose track of your backlink pipeline.
+                </p>
+                <span class="feature-benefit">Full visibility</span>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Writes Full Articles</h3>
+                <p>
+                    Journalist accepted your pitch? We automatically generate a complete 
+                    800-1200 word article with optimized quotes and citations. 
+                    Just review and send.
+                </p>
+                <span class="feature-benefit">Growth plan & up</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="section" id="pricing">
+        <h2 class="section-title">Choose Your Growth Plan</h2>
+        <p class="section-subtitle">
+            All plans include unlimited pitches, automatic backlink verification and DR checking. 
+            Cancel anytime, no questions asked.
+        </p>
+
+        <div class="pricing-grid">
+            <!-- STARTER -->
+            <div class="pricing-card fade-in">
+                <h3 class="pricing-plan">Starter</h3>
+                <div class="pricing-price">$199</div>
+                <div class="pricing-period">/month</div>
+                <p class="pricing-tagline">Perfect for solopreneurs starting with PR</p>
+                
+                <ul class="pricing-features">
+                    <li>✨ Unlimited pitches (no caps)</li>
+                    <li>3 backlinks DR35+ guaranteed/month</li>
+                    <li>AI finds your best matches (85%+ score)</li>
+                    <li>Success Probability Scoring</li>
+                    <li>Multi-language support (6 languages)</li>
+                    <li>Real-time backlink verification</li>
+                    <li>Automatic DR checking</li>
+                    <li>Analytics dashboard</li>
+                    <li>1 website</li>
+                    <li>Email support</li>
+                </ul>
+                
+                <div class="pricing-result">
+                    <strong>📈 Expected Result:</strong>
+                    <div>
+                        • 3 DR35+ backlinks/month<br>
+                        • ~$2,400/month value in backlinks<br>
+                        • 40% cheaper than competitors
+                    </div>
+                </div>
+                
+                <button class="pricing-cta" onclick="window.location.href='https://nexusbacklink-v2.vercel.app/pricing'">Start Now</button>
+            </div>
+
+            <!-- GROWTH -->
+            <div class="pricing-card featured fade-in">
+                <div class="pricing-badge">MOST POPULAR</div>
+                <h3 class="pricing-plan">Growth</h3>
+                <div class="pricing-price">$399</div>
+                <div class="pricing-period">/month</div>
+                <p class="pricing-tagline">For professionals serious about PR & SEO</p>
+                
+                <ul class="pricing-features">
+                    <li>✨ Unlimited pitches (no caps)</li>
+                    <li>8 backlinks DR40+ guaranteed/month</li>
+                    <li>🎯 Voice Clone AI (your unique style)</li>
+                    <li>✍️ Content Generation (full articles)</li>
+                    <li>Success Probability Scoring</li>
+                    <li>Predictive Analytics AI</li>
+                    <li>Success rate predictions (3 months)</li>
+                    <li>Automatic backlink tracking & DR check</li>
+                    <li>3 websites</li>
+                    <li>Priority support (24h response)</li>
+                </ul>
+                
+                <div class="pricing-result">
+                    <strong>🚀 Expected Result:</strong>
+                    <div>
+                        • 8 DR40+ backlinks/month<br>
+                        • ~$8,000/month value in backlinks<br>
+                        • 20x ROI on average
+                    </div>
+                </div>
+                
+                <button class="pricing-cta" onclick="window.location.href='https://nexusbacklink-v2.vercel.app/pricing'">Start Now</button>
+            </div>
+
+            <!-- BOOST -->
+            <div class="pricing-card fade-in">
+                <h3 class="pricing-plan">Boost</h3>
+                <div class="pricing-price">$899</div>
+                <div class="pricing-period">/month</div>
+                <p class="pricing-tagline">Enterprise solution for maximum SEO impact</p>
+                
+                <ul class="pricing-features">
+                    <li>✨ Unlimited pitches (no caps)</li>
+                    <li>15 backlinks DR50+ guaranteed/month</li>
+                    <li>🎯 Voice Clone AI Premium</li>
+                    <li>✍️ Unlimited Content Generation</li>
+                    <li>Everything in Growth</li>
+                    <li>Unlimited websites</li>
+                    <li>Full API access (white-label ready)</li>
+                    <li>Advanced AI Analytics</li>
+                    <li>SEO Impact Forecasting</li>
+                    <li>VIP Support (<4h response)</li>
+                    <li>Dedicated Account Manager</li>
+                </ul>
+                
+                <div class="pricing-result">
+                    <strong>💎 Expected Result:</strong>
+                    <div>
+                        • 15 DR50+ backlinks/month<br>
+                        • ~$20,000/month value in backlinks<br>
+                        • 22x ROI on average
+                    </div>
+                </div>
+                
+                <button class="pricing-cta" onclick="window.location.href='https://nexusbacklink-v2.vercel.app/pricing'">Start Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <section class="section" id="comparison">
+        <h2 class="section-title">Why Choose <span class="gradient-text">NexusBacklink</span>?</h2>
+        <p class="section-subtitle">
+            See how we compare to Backlinker.AI (the closest competitor)
+        </p>
+
+        <div class="comparison-table fade-in">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Backlinker.AI</th>
+                        <th style="color: var(--accent);">NexusBacklink</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Entry Price</strong></td>
+                        <td>$300/month</td>
+                        <td><strong>$199/month</strong> (34% cheaper) ✨</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pitches Per Month</strong></td>
+                        <td>150 max (capped)</td>
+                        <td><strong>Unlimited</strong> ✨</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Guaranteed Backlinks</strong></td>
+                        <td>3 DR30+ (lower quality)</td>
+                        <td><strong>3-15 DR35-50+</strong> (verified)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Backlink Verification</strong></td>
+                        <td><span class="cross">✗</span> Manual checking</td>
+                        <td><span class="check">✓</span> Automatic + DR check</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pitch Quality</strong></td>
+                        <td>Generic GPT templates</td>
+                        <td><strong>Voice Clone</strong> (sounds like YOU)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Success Probability</strong></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span> Know before sending</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content Generation</strong></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span> Full article drafts (Growth+)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Multi-Language</strong></td>
+                        <td><span class="cross">✗</span> EN only</td>
+                        <td><span class="check">✓</span> 6 languages</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pipeline Tracking</strong></td>
+                        <td>Basic list</td>
+                        <td><strong>Visual pipeline</strong> (4 stages)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analytics</strong></td>
+                        <td>Basic metrics</td>
+                        <td><strong>Predictive AI insights</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>API Access</strong></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span> Boost plan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section" style="text-align: center;">
+        <h2 class="section-title fade-in">Ready to <span class="gradient-text">10x Your Backlinks</span>?</h2>
+        <p class="section-subtitle fade-in">
+            Join companies using AI to dominate their SEO. Get your first DR35+ backlink within 30 days or get a full refund.
+        </p>
+        <div class="cta-group fade-in">
+            <a href="https://nexusbacklink-v2.vercel.app/pricing" class="cta-primary">Start Now - $199/month</a>
+            <a href="#features" class="cta-secondary">See All Features</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div style="margin-bottom: 2rem;">
+            <img src="./assets/logo.png" alt="NexusBacklink" style="height: 60px; opacity: 0.8;">
+        </div>
+        <p>© 2025 NexusBacklink. AI-powered backlinks that actually work.</p>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Documentation</a>
+            <a href="#">Support</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 2rem; color: #64748b;">
+            nexusbacklink.com | nexusbacklink.app
+        </p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Stars animation
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Navbar scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const stars = document.querySelector('.stars');
+            stars.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
